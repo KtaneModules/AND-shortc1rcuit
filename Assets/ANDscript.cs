@@ -31,6 +31,8 @@ public class ANDscript : MonoBehaviour
     public TextMesh topDisplay;
     public TextMesh bottomDisplay;
 
+    int offset;
+
     //An empty that holds the animations in the module
     public GameObject animHolder;
 
@@ -64,6 +66,10 @@ public class ANDscript : MonoBehaviour
     static int moduleIdCounter = 1;
     int moduleId;
     private bool moduleSolved;
+
+#pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"Submit your answer with “!{0} submit <input>”.";
+#pragma warning restore 414
 
     private void GenerateStages()
     {
@@ -259,6 +265,8 @@ public class ANDscript : MonoBehaviour
                 //If we've shown all the stages
                 if (check == count)
                 {
+                    Debug.LogFormat("[A>N<D #{0}] The complete input is {1}", moduleId, string.Join("", new List<int>(solution).ConvertAll(i => i.ToString()).ToArray()));
+                    ShowCurrentInput();
                     //Allow inputting
                     inputting = true;
                     //Play the key animation
@@ -266,8 +274,6 @@ public class ANDscript : MonoBehaviour
                     //Blank all the displays
                     stageText.text = "--";
                     gateText.text = "";
-                    topDisplay.text = "";
-                    bottomDisplay.text = "";
                 }
                 else
                 {
@@ -308,6 +314,9 @@ public class ANDscript : MonoBehaviour
 
             //Go to the next needed input
             curInput++;
+
+            ShowCurrentInput();
+
             //If all items have been inputted
             if (curInput == solution.Length)
             {
@@ -317,12 +326,10 @@ public class ANDscript : MonoBehaviour
                 module.HandlePass();
                 moduleSolved = true;
             }
-            //Clear all displays
-            stageText.text = "--";
-            gateText.text = "";
-            topDisplay.text = "";
-            bottomDisplay.text = "";
-        }
+
+			stageText.text = "--";
+			gateText.text = "";
+		}
         else
         {
             Debug.LogFormat("[A>N<D #{0}] You inputted {1} when you should have inputted {2}", moduleId, button, solution[curInput]);
@@ -353,5 +360,43 @@ public class ANDscript : MonoBehaviour
         }
         //Plays a sound effect
         audio.PlaySoundAtTransform("Shutter", transform);
+    }
+
+    void ShowCurrentInput()
+    {
+		string top = "";
+		string bottom = "";
+
+        if (curInput - offset > 10)
+        {
+            offset += 5;
+        }
+
+        for (int i = 0; i < Mathf.Min(count, 5); i++)
+        {
+            if (i + offset < curInput)
+            {
+                top += solution[i + offset].ToString();
+            }
+            else
+            {
+                top += "-";
+            }
+        }
+
+        for (int i = 5; i < Mathf.Min(count-offset,10); i++)
+        {
+            if (i + offset < curInput)
+            {
+                bottom += solution[i + offset].ToString();
+            }
+            else
+            {
+                bottom += "-";
+            }
+        }
+
+		topDisplay.text = top;
+		bottomDisplay.text = bottom;
     }
 }

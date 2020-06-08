@@ -17,7 +17,8 @@ MonoBehaviour:
   description: "A>N<D\r\nI see fancy names are in the vogue now.\r\n\r\nModule ID:
     ANDmodule\r\n\r\nIdea by Rdzanu\r\nDesign by Pruz\r\nCoding by epictho\r\nPolish
     by short_c1rcuit\r\n\r\nManual available here: https://ktane.timwi.de/HTML/A_N_D.html\r\n\r\nBuild
-    1.0 notes:\r\nInitial release\n\nBuild 1.0.1 notes:\nPre-release changes"
-  version: 1.0.1
+    1.0 notes:\r\nInitial release\n\nBuild 1.0.1 notes:\nPre-release changes\n\nBuild
+    1.1 notes:\nAdded input display"
+  version: 1.1
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 9c8b33272db839e40a5f7158fa7fdb0b, type: 3}
