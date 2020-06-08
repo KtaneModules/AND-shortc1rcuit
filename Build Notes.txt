@@ -12,3 +12,6 @@ Manual available here: https://ktane.timwi.de/HTML/A_N_D.html
 
 Build 1.0 notes:
 Initial release
+
+Build 1.0.1 notes:
+Pre-release changes
