@@ -18,3 +18,6 @@ Pre-release changes
 
 Build 1.1 notes:
 Added input display
+
+Build 1.2 notes:
+A>N<D NOW HAS TP SUPPORT

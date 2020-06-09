@@ -9,6 +9,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Linq;
 using KModkit;
@@ -31,6 +32,7 @@ public class ANDscript : MonoBehaviour
     public TextMesh topDisplay;
     public TextMesh bottomDisplay;
 
+    //Used for the input display
     int offset;
 
     //An empty that holds the animations in the module
@@ -62,6 +64,9 @@ public class ANDscript : MonoBehaviour
     //Used to start the animation 
     Animator anim;
 
+    //Used for the speed up in the TP submission
+    int time;
+
     //logging
     static int moduleIdCounter = 1;
     int moduleId;
@@ -71,6 +76,28 @@ public class ANDscript : MonoBehaviour
     private readonly string TwitchHelpMessage = @"Submit your answer with “!{0} submit <input>”.";
 #pragma warning restore 414
 
+    public IEnumerator ProcessTwitchCommand(string command)
+    {
+        command = command.ToLowerInvariant().Trim();
+
+        if (!inputting)
+        {
+            yield return "sendtochaterror Now is not the time to input.";
+        }
+
+        if (Regex.IsMatch(command, @"^submit (\d+)$"))
+        {
+            foreach (char digit in Regex.Match(command, @"^submit (\d+)$").Groups[1].Value)
+            {
+                yield return new WaitForSeconds(0.15f);
+                buttons[int.Parse(digit.ToString())].OnInteract();
+            }
+        }
+        else
+        {
+            yield return "sendtochaterror The command you inputted is incorrect.";
+        }
+    }
     private void GenerateStages()
     {
         //This loop makes every stage of the bomb.
@@ -327,9 +354,9 @@ public class ANDscript : MonoBehaviour
                 moduleSolved = true;
             }
 
-			stageText.text = "--";
-			gateText.text = "";
-		}
+            stageText.text = "--";
+            gateText.text = "";
+        }
         else
         {
             Debug.LogFormat("[A>N<D #{0}] You inputted {1} when you should have inputted {2}", moduleId, button, solution[curInput]);
@@ -364,39 +391,40 @@ public class ANDscript : MonoBehaviour
 
     void ShowCurrentInput()
     {
-		string top = "";
-		string bottom = "";
+        topDisplay.text = "";
+        bottomDisplay.text = "";
 
+        //Updates the offset if the input is about to go off the edge
         if (curInput - offset > 10)
         {
             offset += 5;
         }
 
+        //Updates the top display
         for (int i = 0; i < Mathf.Min(count, 5); i++)
         {
+            //If this digit has been inputted
             if (i + offset < curInput)
             {
-                top += solution[i + offset].ToString();
+                topDisplay.text += solution[i + offset].ToString();
             }
             else
             {
-                top += "-";
+                topDisplay.text += "-";
             }
         }
 
-        for (int i = 5; i < Mathf.Min(count-offset,10); i++)
+        for (int i = 5; i < Mathf.Min(count - offset, 10); i++)
         {
+            //If this digit has been inputted
             if (i + offset < curInput)
             {
-                bottom += solution[i + offset].ToString();
+                bottomDisplay.text += solution[i + offset].ToString();
             }
             else
             {
-                bottom += "-";
+                bottomDisplay.text += "-";
             }
         }
-
-		topDisplay.text = top;
-		bottomDisplay.text = bottom;
     }
 }
