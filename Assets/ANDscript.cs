@@ -273,6 +273,11 @@ public class ANDscript : MonoBehaviour
 
     void Update()
     {
+        if(count == 0)
+        {
+            return;
+        }
+
         //A ticker is used so it doesn't lag out the game by checking every frame
         ticker++;
         if (ticker == 5)

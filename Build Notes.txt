@@ -21,3 +21,6 @@ Added input display
 
 Build 1.2 notes:
 A>N<D NOW HAS TP SUPPORT
+
+Build 1.3 notes:
+Fixed highlight issue
