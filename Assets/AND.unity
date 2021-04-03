@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &431507147
+--- !u!1001 &323408852
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -151,6 +151,11 @@ Prefab:
     - target: {fileID: 4554603718434292, guid: d4838e96fa6c8cc41a47f373edf5ea49, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388219261133202, guid: d4838e96fa6c8cc41a47f373edf5ea49,
+        type: 2}
+      propertyPath: bottomDisplay
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1453265797884380, guid: d4838e96fa6c8cc41a47f373edf5ea49, type: 2}
       propertyPath: m_Name
