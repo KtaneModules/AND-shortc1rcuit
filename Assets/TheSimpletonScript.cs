@@ -51,7 +51,7 @@ public class TheSimpletonScript : MonoBehaviour
 		if (Once == 1)
 		{
 			Debug.LogFormat("[The Simpleton #{0}] You pushed the button. Good job!", moduleId);
-			Audio.PlaySoundAtTransform(SFX.name, transform);
+			//Audio.PlaySoundAtTransform(SFX.name, transform);
 			Victory.text = "VICTORY";
 			Module.HandlePass();
 			Once = 2;

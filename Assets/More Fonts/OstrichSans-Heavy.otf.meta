@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9171b26daa099d9409e614dd88d04d8a
+guid: d5e372a59dd7dca449a28f3f1599d415
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,10 +8,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: 6809 Chargen
+  fontName: Ostrich Sans
   fontNames:
-  - 6809 Chargen
-  fallbackFontReferences: []
+  - Ostrich Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

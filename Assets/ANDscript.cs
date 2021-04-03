@@ -314,6 +314,18 @@ public class ANDscript : MonoBehaviour
                     gateText.text = displayed[curStage, 2];
                     topDisplay.text = displayed[curStage, 0];
                     bottomDisplay.text = displayed[curStage, 1];
+
+                    //Some visual adjustments
+					if (gateText.text == "|")
+					{
+                        gateText.fontSize = 72;
+                        gateText.fontStyle = FontStyle.Bold;
+					}
+					else
+					{
+                        gateText.fontSize = 144;
+                        gateText.fontStyle = FontStyle.Normal;
+                    }
                 }
             }
         }
@@ -379,17 +391,25 @@ public class ANDscript : MonoBehaviour
         topDisplay.text = displayed[curInput, 0];
         bottomDisplay.text = displayed[curInput, 1];
         stageText.text = (curInput + 1).ToString();
+
+        //Some visual adjustments
+        if (gateText.text == "|")
+        {
+            gateText.fontSize = 72;
+            gateText.fontStyle = FontStyle.Bold;
+        }
+        else
+        {
+            gateText.fontSize = 144;
+            gateText.fontStyle = FontStyle.Normal;
+        }
     }
 
     IEnumerator FlapAnim()
     {
         //Starts the animation
         anim.SetTrigger("Endgame");
-        //Waits for 135 frames
-        for (int i = 0; i < 135; i++)
-        {
-            yield return null;
-        }
+        yield return new WaitForSecondsRealtime(2.35f);
         //Plays a sound effect
         audio.PlaySoundAtTransform("Shutter", transform);
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e9a6b48f9930a343ae28acd15b5c083
+guid: cbaa748aa5d86b046aebc77cbef812fd
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,10 +8,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Neon Pixel-7
+  fontName: Overpass Mono
   fontNames:
-  - Neon Pixel-7
-  fallbackFontReferences: []
+  - Overpass Mono
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c1d022ea63181784bb006259c32e9abd, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

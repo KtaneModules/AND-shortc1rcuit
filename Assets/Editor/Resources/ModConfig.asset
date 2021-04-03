@@ -15,12 +15,14 @@ MonoBehaviour:
   title: A>N<D
   author: short_c1rcuit
   description: "A>N<D\r\nI see fancy names are in the vogue now.\r\n\r\nModule ID:
-    ANDmodule\r\n\r\nIdea by Rdzanu\r\nDesign by Pruz\r\nCoding by epictho\r\nPolish
-    by short_c1rcuit\r\n\r\nManual available here: https://ktane.timwi.de/HTML/A_N_D.html\r\n\r\nBuild
-    1.0 notes:\r\nInitial release\n\nBuild 1.0.1 notes:\nPre-release changes\n\nBuild
-    1.1 notes:\nAdded input display\n\nBuild 1.2 notes:\nA>N<D NOW HAS TP SUPPORT\n\nBuild
-    1.3 notes:\nFixed highlight issue\n\nBuild 1.4 notes:\nChanged font to a monospaced
-    one."
-  version: 1.4
+    ANDmodule\r\n\r\nIdea by Rdzanu\r\nDesign by Pruz\r\nCoding by epictho\r\nCoding
+    and Final release by short_c1rcuit\n\rAdditional help from Rexkix and Pluckylump\n\nManual
+    available here: https://ktane.timwi.de/HTML/A_N_D.html\r\n\r\nBuild 1.0 notes:\r\nInitial
+    release\n\nBuild 1.0.1 notes:\nPre-release changes\n\nBuild 1.1 notes:\nAdded
+    input display\n\nBuild 1.2 notes:\nA>N<D NOW HAS TP SUPPORT\n\nBuild 1.3 notes:\nFixed
+    highlight issue\n\nBuild 1.4 notes:\nChanged font to a monospaced one.\n\nBuild
+    1.5 notes:\nUsed a better font (and fixed a bug caused by the last update).\nThank
+    you to Rex and Pluckylump for making the module look better."
+  version: 1.5
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 9c8b33272db839e40a5f7158fa7fdb0b, type: 3}

@@ -152,11 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114388219261133202, guid: d4838e96fa6c8cc41a47f373edf5ea49,
-        type: 2}
-      propertyPath: bottomDisplay
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1453265797884380, guid: d4838e96fa6c8cc41a47f373edf5ea49, type: 2}
       propertyPath: m_Name
       value: A>N<D

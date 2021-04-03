@@ -6,7 +6,8 @@ Module ID: ANDmodule
 Idea by Rdzanu
 Design by Pruz
 Coding by epictho
-Polish by short_c1rcuit
+Coding and Final release by short_c1rcuit
+Additional help from Rexkix and Pluckylump
 
 Manual available here: https://ktane.timwi.de/HTML/A_N_D.html
 
@@ -27,3 +28,7 @@ Fixed highlight issue
 
 Build 1.4 notes:
 Changed font to a monospaced one.
+
+Build 1.5 notes:
+Used a better font (and fixed a bug caused by the last update).
+Thank you to Rex and Pluckylump for making the module look better.
