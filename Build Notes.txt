@@ -32,3 +32,9 @@ Changed font to a monospaced one.
 Build 1.5 notes:
 Used a better font (and fixed a bug caused by the last update).
 Thank you to Rex and Pluckylump for making the module look better.
+
+Build 1.6 notes:
+Improved logging
+
+Build 1.7 notes:
+Removed code that strikes you for inputtung before you're supposed to

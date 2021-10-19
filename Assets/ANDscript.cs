@@ -165,6 +165,8 @@ public class ANDscript : MonoBehaviour
             solution[i] = num3;
             displayed[i, 2] = gatesText[gate];
         }
+
+        Debug.LogFormat("[A>N<D #{0}] The complete input is {1}", moduleId, string.Join("", new List<int>(solution).ConvertAll(i => i.ToString()).ToArray()));
     }
 
     private void Awake()
@@ -297,7 +299,7 @@ public class ANDscript : MonoBehaviour
                 //If we've shown all the stages
                 if (check == count)
                 {
-                    Debug.LogFormat("[A>N<D #{0}] The complete input is {1}", moduleId, string.Join("", new List<int>(solution).ConvertAll(i => i.ToString()).ToArray()));
+                    
                     ShowCurrentInput();
                     //Allow inputting
                     inputting = true;
@@ -338,6 +340,7 @@ public class ANDscript : MonoBehaviour
         {
             return;
         }
+
         //Gets the index of the button in the array
         int button = Array.IndexOf(buttons, pressedButton);
         //Makes the bomb move and plays a noise
@@ -347,10 +350,9 @@ public class ANDscript : MonoBehaviour
         //If you aren't meant to input yet
         if (!inputting)
         {
-            Debug.LogFormat("[A>N<D #{0}] You shouldn't be inputting yet:", moduleId);
-            module.HandleStrike();
             return;
         }
+
         //If the correct button was pressed
         if (solution[curInput] == button)
         {

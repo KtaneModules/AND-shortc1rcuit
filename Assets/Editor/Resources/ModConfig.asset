@@ -22,7 +22,9 @@ MonoBehaviour:
     input display\n\nBuild 1.2 notes:\nA>N<D NOW HAS TP SUPPORT\n\nBuild 1.3 notes:\nFixed
     highlight issue\n\nBuild 1.4 notes:\nChanged font to a monospaced one.\n\nBuild
     1.5 notes:\nUsed a better font (and fixed a bug caused by the last update).\nThank
-    you to Rex and Pluckylump for making the module look better."
-  version: 1.5
+    you to Rex and Pluckylump for making the module look better.\n\nBuild 1.6 notes:\nImproved
+    logging\n\nBuild 1.7 notes:\nRemoved code that strikes you for inputtung before
+    you're supposed to"
+  version: 1.7
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 9c8b33272db839e40a5f7158fa7fdb0b, type: 3}
