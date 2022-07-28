@@ -38,3 +38,6 @@ Improved logging
 
 Build 1.7 notes:
 Removed code that strikes you for inputtung before you're supposed to
+
+Build 1.8 notes:
+Added TP Autosolver (credit: QuinnWuest)
