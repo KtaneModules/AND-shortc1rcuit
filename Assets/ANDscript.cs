@@ -98,6 +98,24 @@ public class ANDscript : MonoBehaviour
             yield return "sendtochaterror The command you inputted is incorrect.";
         }
     }
+    private IEnumerator TwitchHandleForcedSolve()
+    {
+        // "yield return true" allows this module's queue in the autosolve list to be skipped.
+        // "yield return null" keeps the autosolver onto the current module, which in this case, would result in a softlock.
+        // Basically, nothing has to be done when input is not expected, therefore check another module in the autosolver queue.
+        while (!inputting)
+            yield return true;
+
+        // Turns out the buttons can still be pressed before/during the flip animation...
+        // Wait some time so the solve looks natural.
+        yield return new WaitForSeconds(3.5f);
+        
+        while (!moduleSolved)
+        {
+            buttons[solution[curInput]].OnInteract(); // Press the button equal to the solution of the current stage.
+            yield return new WaitForSeconds(0.15f);
+        }
+    }
     private void GenerateStages()
     {
         //This loop makes every stage of the bomb.
